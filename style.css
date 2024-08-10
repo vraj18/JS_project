@@ -1,0 +1,158 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* background image for all sections */
+#background1{
+    height: 100vh; /* Adjust this based on your content */
+    background-image: url('images/home-img.jpg');
+    background-repeat: repeat-y;
+    background-position: top center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#background2, #background3, #background4, #background5 {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Adjust this based on your content */
+    background-image: url('images/stars2bg.jpg');
+    background-repeat: repeat-y;
+    background-position: top center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+/* navbar section */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0); /* Initial transparent background color */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 1); /* Background color when scrolled */
+}
+
+.logo img {
+    height: 50px; /* Adjust this as needed for your logo size */
+    position: relative;
+    margin-right: 680px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white; /* Default text color */
+    font-size: 20px; /* Default font size */
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: rgb(69, 69, 69); /* Hover text color */
+}
+
+/* Optional: Add an underline effect on hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: rgb(69, 69, 69);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+}
+
+
+
+/* home section */
+
+.home-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 50px solid black;
+}
+
+
+.axis-logo img{
+    height: 300px;
+}
+
+/* events section */
+
+.events-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.events-section  img{
+    height: 100px;
+}
+.row1{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+.row2{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+#event-card{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+    background-color: darkblue;
+
+}
