@@ -1,4 +1,4 @@
-/* Reset some basic styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,9 +10,8 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-/* background image for all sections */
-#background1{
-    height: 100vh; /* Adjust this based on your content */
+#background1 {
+    height: 100vh;
     background-image: url('images/home-img.jpg');
     background-repeat: repeat-y;
     background-position: top center;
@@ -23,7 +22,7 @@ body, html {
 #background2, #background3, #background4, #background5 {
     margin: 0;
     padding: 0;
-    height: 100vh; /* Adjust this based on your content */
+    height: 100vh; 
     background-image: url('images/stars2bg.jpg');
     background-repeat: repeat-y;
     background-position: top center;
@@ -31,12 +30,11 @@ body, html {
     background-size: cover;
 }
 
-/* navbar section */
 .navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0); /* Initial transparent background color */
+    background-color: rgba(0, 0, 0, 0); 
     padding-top: 5px;
     padding-bottom: 5px;
     position: fixed;
@@ -47,11 +45,11 @@ body, html {
 }
 
 .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 1); /* Background color when scrolled */
+    background-color: rgba(0, 0, 0, 1); 
 }
 
 .logo img {
-    height: 50px; /* Adjust this as needed for your logo size */
+    height: 50px;
     position: relative;
     margin-right: 680px;
 }
@@ -70,16 +68,15 @@ body, html {
 
 .nav-links a {
     text-decoration: none;
-    color: white; /* Default text color */
-    font-size: 20px; /* Default font size */
+    color: white;
+    font-size: 20px;
     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: rgb(69, 69, 69); /* Hover text color */
+    color: rgb(69, 69, 69); 
 }
 
-/* Optional: Add an underline effect on hover */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -95,7 +92,6 @@ body, html {
     width: 100%;
 }
 
-/* Responsive adjustments (optional) */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -108,51 +104,109 @@ body, html {
     }
 }
 
-
-
-/* home section */
-
-.home-section{
+.home-section {
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 50px solid black;
 }
 
-
-.axis-logo img{
+.axis-logo img {
     height: 300px;
 }
 
-/* events section */
+.events-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px; 
+}
 
-.events-section{
+.row1, .row2 {
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 100px;
+    margin-top: 80px;
 }
 
-.events-section  img{
-    height: 100px;
-}
-.row1{
+#event-card {
     display: flex;
-    padding: 10px;
-    gap: 10px;
-}
-.row2{
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-}
-
-#event-card{
-    display:flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 200px;
+    height: 250px;
     width: 200px;
     border-radius: 15px;
-    background-color: darkblue;
-
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+    text-align: center;
+    position: relative;
 }
+
+#event-card img {
+    height: 150px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.event-name {
+    margin: 10px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.white-bg {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#event-card:hover {
+    box-shadow: 0 0 15px 5px rgba(192, 192, 192, 0.8);
+}
+
+
+.know-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; 
+    text-decoration: none; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.know-more:hover {
+    background: linear-gradient(45deg, #feb47b, #ff7e5f);
+    color: #333;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+.know-more:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    .events-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
