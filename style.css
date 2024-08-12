@@ -1,5 +1,4 @@
 
-
 * {
     margin: 0;
     padding: 0;
@@ -12,39 +11,55 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-#home-background {
+#background1 {
     height: 100vh;
     background-image: url('images/home-img.jpg');
     background-repeat: repeat-y;
     background-position: top center;
     background-attachment: scroll;
     background-size: cover;
+    border:0px !important;
 }
 
-#about-background, #events-background, #teams-background, #contacts-background {
+#background2, #background3, #background4, #background5 {
     margin: 0;
     padding: 0;
-    height: 100vh; 
+    /* height: 100vh;  */
     background-image: url('images/stars2bg.jpg');
     background-repeat: repeat-y;
     background-position: top center;
     background-attachment: scroll;
     background-size: cover;
 }
-
+.logo{
+    margin-right: 10%;
+}
+.navbar-container{
+    position: fixed !important;
+}
 .navbar {
-    display: flex;
+    /* display: flex;
     justify-content: space-around;
-    align-items: center;
-    background-color: rgba(255,255,255, 0.1); 
+    align-items: center; */
+    background-color: rgba(0, 0, 0, 0.1) !important ;
     padding-top: 5px;
     padding-bottom: 5px;
-    position: fixed;
-    width: 100%;
+    /* position: fixed !important; */
     top: 0;
     z-index: 1000;
     font-family: monospace;
     transition: background-color 0.2s ease-in-out;
+    width: auto;
+}
+.nav-link{
+    color:white !important;
+}
+.navbar-collapse{
+    justify-content: end;
+}
+.navbar-nav{
+    margin-right: 3%;
+    width: 100%;
 }
 
 .navbar.scrolled {
@@ -53,8 +68,6 @@ body, html {
 
 .logo img {
     height: 50px;
-    position: relative;
-    margin-right: 680px;
 }
 
 .nav-links {
@@ -138,8 +151,8 @@ body, html {
 
 .planet {
     position: absolute;
-    width: 50px; /* Size of the orbiting circles */
-    height: 50px;
+    width: 60px; /* Size of the orbiting circles */
+    height: 60px;
     border-radius: 50%;
 }
 
@@ -220,26 +233,90 @@ body, html {
 }
 
 /* ----------------------------- about section -----------------------------*/
+
+.about-section{
+    justify-content: center;
+    text-align: center;
+    margin: 3%;
+}
+@media (width: 900px) {
+    .about-contents,.why-contents{
+        font-size: 0.8rem;
+    }
+    .about-heading,.about-why{
+        font-size: 2rem;
+    }
+
+}
 .about-heading{
     color: white;
-    font-size: 60px;
+    font-size: 3rem;
     font-weight: 900;
     font-family:monospace;
-    position: relative;
+    
     padding-top: 20px;
-    padding-left: 300px;
+    
 }
 
 .about-contents{
     color: white;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 300;
     font-family:monospace;
-    position: relative;
+    
     padding-top: 40px;
-    padding-left: 85px;
+    
     width: 90%;    
 }
+
+.gallery {
+    width: 100%;
+    height: 300px; /* Height of the gallery */
+    overflow: hidden;
+    position: relative;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 4.5em;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.gallery-track {
+    display: flex;
+    align-items: center;
+    animation: scroll 10s linear infinite;
+    height: 100%;
+    white-space: nowrap; /* Prevent wrapping into rows */
+}
+
+.gallery-track img {
+    height: 100%; /* Use full height of the gallery */
+    margin-right: 20px;
+    object-fit: contain; /* Ensures the image is fully visible without distortion */
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+
+
+
+
 /* ----------------------------- events section -----------------------------*/
 
 
@@ -247,7 +324,7 @@ body, html {
     color: white;
     font-size: 60px;
     font-weight: 900;
-    position: relative;
+    
     margin-top: 80px;
     font-family:monospace;
 
@@ -273,14 +350,14 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 250px;
-    width: 200px;
+    /* height: 250px; */
+    gap:10%;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease-in-out;
     text-align: center;
-    position: relative;
+    margin: 5%;
     border: 2px solid white;
     background-color: rgba(0, 0, 0, 0.1);
 }
@@ -351,137 +428,44 @@ body, html {
     }
 }
 
-
-
-
-
-/* ------------------------------ contents section ------------------------------ */
-
-.contacts-background{
+.content-background{
     display: flex;
     background-color: black;
-    height: 20rem;
+    height: 25rem;
     width: 100%;
-    align-items:top;
-    justify-content: space-between;
-
-}
-
-.contacts-section{
+    margin-bottom: 0px;
+    align-items: center;
+    justify-content: space-around;
+ }
+ 
+ 
+ .contents-section{
     display: flex;
-    align-items: end;
     font-family: monospace;
-    
-}
-
-.contacts-logo img{
-    margin-top: 1em;
-    height: 7em;
-}
-
-.contacts-logo{
-    color: white;
-    width: 30em;
-    margin-left: 7em;
-}
-
-
-.contacts-writing{
-    margin-right: 5em;
-    margin-top: 1em;
-    display: flex;
-    gap: 25px;
-}
-
-.reach-out, .quick-links , .follow-us{
-    margin-top: 30px;
+   
+ }
+ 
+ 
+ .reach-out {
     color: white;
     font-family: monospace;
     width: 160px;
-}
-
-.reach-out-heading, .quick-links-heading, .follow-us-heading {
+ }
+ 
+ 
+ .reach-out-heading {
     font-weight: 900;
-    font-size: 1.3em;
-    color: gray;
-}
+    font-size: 1.3rem;
+ }
+ 
+ 
+ 
+ 
 
 
 
-.quick-links-content {
-    list-style: none;
-    display: block;
-    margin-top: 10px;
-    font-size: 1rem;
-
-}
-
-
-.quick-links-content a{
-    text-decoration: none;
-    color: white;
-}
-
-.quick-links-content div{
-    margin-bottom: 10px;
-}
-
-.reach-out-address{
-    font-size: 1rem;
-    margin-top: 10px;
-}  
 
 
 
-.social-icons img{
-    height: 30px;
-    display: block;
-    margin-top: 10px;
-}
 
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.gallery {
-    width: 100%;
-    height: 300px; /* Height of the gallery */
-    overflow: hidden;
-    position: relative;
-    margin-top: 50px;
-    text-align: center;
-}
-
-.gallery-title {
-    font-size: 4.5em;
-    color: white;
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-family: monospace;
-}
-
-.gallery-track {
-    display: flex;
-    align-items: center;
-    animation: scroll 10s linear infinite;
-    height: 100%;
-    white-space: nowrap; /* Prevent wrapping into rows */
-}
-
-.gallery-track img {
-    height: 100%; /* Use full height of the gallery */
-    margin-right: 20px;
-    object-fit: contain; /* Ensures the image is fully visible without distortion */
-}
-
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
+ 
