@@ -240,54 +240,6 @@ body, html {
     padding-left: 85px;
     width: 90%;    
 }
-
-.about-why{
-    color: white;
-    font-size: 60px;
-    font-weight: 900;
-    font-family:monospace;
-    position: relative;
-    padding-top: 60px;
-    padding-left: 350px;
-}
-
-.why-contents{
-    color: white;
-    font-size: 15px;
-    font-weight: 300;
-    font-family:monospace;
-    position: relative;
-    padding-top: 20px;
-    padding-left: 85px;
-
-    width: 90%;    
-}
-
-.about-boxes{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 80px;
-}
-.box1:hover, .box2:hover, .box3:hover, .box4:hover{
-    box-shadow: 0 0 15px 5px rgba(192, 192, 192, 0.8);
-}
-
-
-
-.box1, .box2, .box3, .box4{
-    border: 1px solid white;
-    height: 200px;
-    width: 200px;
-    border-radius: 2px;
-    background-color: rgba(0, 0, 0, 0.4);
-    /* background-image: radial-gradient(darkblue,black); */
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-
 /* ----------------------------- events section -----------------------------*/
 
 
@@ -487,3 +439,49 @@ body, html {
     margin-top: 10px;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.gallery {
+    width: 100%;
+    height: 300px; /* Height of the gallery */
+    overflow: hidden;
+    position: relative;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 4.5em;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.gallery-track {
+    display: flex;
+    align-items: center;
+    animation: scroll 10s linear infinite;
+    height: 100%;
+    white-space: nowrap; /* Prevent wrapping into rows */
+}
+
+.gallery-track img {
+    height: 100%; /* Use full height of the gallery */
+    margin-right: 20px;
+    object-fit: contain; /* Ensures the image is fully visible without distortion */
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
