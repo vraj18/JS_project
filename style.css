@@ -1,4 +1,5 @@
 
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +12,7 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-#background1 {
+#home-background {
     height: 100vh;
     background-image: url('images/home-img.jpg');
     background-repeat: repeat-y;
@@ -20,7 +21,7 @@ body, html {
     background-size: cover;
 }
 
-#background2, #background3, #background4, #background5 {
+#about-background, #events-background, #teams-background, #contacts-background {
     margin: 0;
     padding: 0;
     height: 100vh; 
@@ -137,8 +138,8 @@ body, html {
 
 .planet {
     position: absolute;
-    width: 60px; /* Size of the orbiting circles */
-    height: 60px;
+    width: 50px; /* Size of the orbiting circles */
+    height: 50px;
     border-radius: 50%;
 }
 
@@ -396,5 +397,93 @@ body, html {
         flex-direction: column;
         gap: 20px;
     }
+}
+
+
+
+
+
+/* ------------------------------ contents section ------------------------------ */
+
+.contacts-background{
+    display: flex;
+    background-color: black;
+    height: 20rem;
+    width: 100%;
+    align-items:top;
+    justify-content: space-between;
+
+}
+
+.contacts-section{
+    display: flex;
+    align-items: end;
+    font-family: monospace;
+    
+}
+
+.contacts-logo img{
+    margin-top: 1em;
+    height: 7em;
+}
+
+.contacts-logo{
+    color: white;
+    width: 30em;
+    margin-left: 7em;
+}
+
+
+.contacts-writing{
+    margin-right: 5em;
+    margin-top: 1em;
+    display: flex;
+    gap: 25px;
+}
+
+.reach-out, .quick-links , .follow-us{
+    margin-top: 30px;
+    color: white;
+    font-family: monospace;
+    width: 160px;
+}
+
+.reach-out-heading, .quick-links-heading, .follow-us-heading {
+    font-weight: 900;
+    font-size: 1.3em;
+    color: gray;
+}
+
+
+
+.quick-links-content {
+    list-style: none;
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+
+}
+
+
+.quick-links-content a{
+    text-decoration: none;
+    color: white;
+}
+
+.quick-links-content div{
+    margin-bottom: 10px;
+}
+
+.reach-out-address{
+    font-size: 1rem;
+    margin-top: 10px;
+}  
+
+
+
+.social-icons img{
+    height: 30px;
+    display: block;
+    margin-top: 10px;
 }
 
