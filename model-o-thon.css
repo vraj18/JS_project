@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url('Event1.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.shooting-stars {
+    position: absolute;
+    top: 10;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.shooting-stars::before,
+.shooting-stars::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100px; /* Adjust height to control the length of the shooting star */
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: shooting-star 2s linear infinite;
+    z-index: 1;
+}
+
+.shooting-stars::after {
+    animation: shooting-star 2.5s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes shooting-star {
+    0% {
+        transform: translate(100vw, -100vh) rotate(45deg); /* Starts from bottom-left */
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-100px, 100vh) rotate(45deg); /* Ends at top-right */
+        opacity: 0;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 150px); /* Adjusted height to account for the bottom container */
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding is included in the height */
+}
+
+.text-section {
+    max-width: 50%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+}
+
+.text-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.text-section p {
+    font-size: 1.2em;
+    color: white;
+}
+
+.image-section {
+    flex: 1; /* Allows image-section to take remaining space */
+    display: flex;
+    justify-content: center;
+    height: 20rem;
+    width: 40rem;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    width: 40%; /* Adjust width as needed */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    color: #fff; /* White text color */
+    position: absolute; /* Ensures it stays at the bottom */
+    bottom: 0; /* Aligns it to the bottom of the page */
+    width: 100%; /* Full width */
+    height: 150px; /* Fixed height for visibility */
+    box-sizing: border-box; /* Ensures padding is included in the height */
+}
+
+.box {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly transparent background for contrast */
+    width: 250px; /* Fixed width for uniform boxes */
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.box img {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.box p {
+    margin: 5px 0; /* Adjust margin around each paragraph */
+    font-size: 16px; /* Sets the font size for better readability */
+    color: #fff; /* Sets the text color to white */
+    text-align: center; /* Centers the text horizontally */
+    font-weight: bold; /* Makes the text bold */
+    background: linear-gradient(90deg, #fff, #f0e68c, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 2s linear infinite;
+}
+
+.box .info {
+    font-size: 30px; /* Smaller font size for additional information if needed */
+    color: #ccc; /* Lighter color for secondary text */
+    margin-top: 10px; /* Adds space above the info text */
+    font-weight: bold;
+}
+
+.box .main-info {
+    font-size: 30px; /* Smaller font size for additional information if needed */
+    color: #06c0f4; /* Lighter color for secondary text */
+    margin-top: 10px; /* Adds space above the info text */
+    font-weight: bold;
+}
+
+.box:hover p {
+    color: #06c0f4; /* Dark blue color on hover */
+}
+
+.box:hover .main-info {
+    color: #ffffff; /* Dark blue color on hover */
+}
+
+@keyframes shine {
+    0% {
+        background-position: 200%;
+    }
+    100% {
+        background-position: -200%;
+    }
+}
+
