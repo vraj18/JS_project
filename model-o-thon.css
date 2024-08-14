@@ -1,15 +1,20 @@
-body {
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background: url('Event1.png') no-repeat center center fixed;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto;   /* Enable vertical scrolling */
+}
+
+body {
+    background: url('images/stars2bg.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
 }
 
 .shooting-stars {
     position: absolute;
-    top: 10;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -22,10 +27,10 @@ body {
     content: '';
     position: absolute;
     width: 2px;
-    height: 100px; /* Adjust height to control the length of the shooting star */
+    height: 100px;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-    animation: shooting-star 2s linear infinite;
+    animation: shooting-star 3s linear infinite;
     z-index: 1;
 }
 
@@ -36,26 +41,31 @@ body {
 
 @keyframes shooting-star {
     0% {
-        transform: translate(100vw, -100vh) rotate(45deg); /* Starts from bottom-left */
+        transform: translate(100vw, -100vh) rotate(45deg);
         opacity: 1;
     }
     100% {
-        transform: translate(-100px, 100vh) rotate(45deg); /* Ends at top-right */
+        transform: translate(-100px, 100vh) rotate(45deg);
         opacity: 0;
     }
 }
 
 .container {
-    display: flex;
+    display: block;
     justify-content: space-between;
-    height: calc(100vh - 150px); /* Adjusted height to account for the bottom container */
+    height: 100vh; /* Full-screen height */
     padding: 20px;
-    box-sizing: border-box; /* Ensures padding is included in the height */
+    box-sizing: border-box;
 }
+
+/* .content5 {
+    display: flex;
+    justify-content: space-around;
+} */
 
 .text-section {
     max-width: 50%;
-    padding: 20px;
+    /* padding: 20px; */
     background-color: rgba(0, 0, 0, 0);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
@@ -73,40 +83,92 @@ body {
 }
 
 .image-section {
-    flex: 1; /* Allows image-section to take remaining space */
+    flex: 1;
     display: flex;
     justify-content: center;
-    height: 20rem;
-    width: 40rem;
+    height: 80%;
+    width: 50%;
+    background-image: url("images/MAM.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
 }
 
 .image-section img {
     max-width: 100%;
-    height: auto;
-    width: 40%; /* Adjust width as needed */
+    height: 80%;
+    width: 40%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin-top: 40px;
 }
 
-.bottom-container {
+.conduct-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh; /* Full-screen height */
+    /* padding: 40px 20px; */
+    box-sizing: border-box;
+}
+
+.conduct-section,
+.rules-section {
+    flex: 1;
+    /* padding: 20px; */
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border-radius: 8px;
+    max-width: 45%; /* Max width for each section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+}
+
+.conduct-section h2,
+.rules-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.conduct-section ol,
+.rules-section ul {
+    font-size: 1.2em;
+    line-height: 1.6;
+    padding-left: 20px;
+}
+
+.conduct-section li,
+.rules-section li {
+    margin-bottom: 10px;
+}
+
+.rules-section ul {
+    font-size: 1.2em;
+    line-height: 1.6;
+    padding-left: 0; /* Remove padding since no bullets */
+    list-style-type: none; /* Remove bullet points */
+}
+
+
+/* .bottom-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    color: #fff; /* White text color */
-    position: absolute; /* Ensures it stays at the bottom */
-    bottom: 0; /* Aligns it to the bottom of the page */
-    width: 100%; /* Full width */
-    height: 150px; /* Fixed height for visibility */
-    box-sizing: border-box; /* Ensures padding is included in the height */
+    color: #fff; 
+    position: absolute;
+    bottom: 0; 
+    width: 100%; 
+    height: 150px;
+    box-sizing: border-box;
 }
 
 .box {
     text-align: center;
     padding: 15px;
-    border-radius: 8px; /* Rounded corners */
-    background-color: rgba(0, 0, 0, 0.4); /* Slightly transparent background for contrast */
-    width: 250px; /* Fixed width for uniform boxes */
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.4); 
+    width: 250px;
     height: 220px;
     display: flex;
     flex-direction: column;
@@ -122,11 +184,11 @@ body {
 }
 
 .box p {
-    margin: 5px 0; /* Adjust margin around each paragraph */
-    font-size: 16px; /* Sets the font size for better readability */
-    color: #fff; /* Sets the text color to white */
-    text-align: center; /* Centers the text horizontally */
-    font-weight: bold; /* Makes the text bold */
+    margin: 5px 0; 
+    font-size: 16px; 
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
     background: linear-gradient(90deg, #fff, #f0e68c, #fff);
     background-size: 200%;
     -webkit-background-clip: text;
@@ -135,25 +197,25 @@ body {
 }
 
 .box .info {
-    font-size: 30px; /* Smaller font size for additional information if needed */
-    color: #ccc; /* Lighter color for secondary text */
-    margin-top: 10px; /* Adds space above the info text */
+    font-size: 30px; 
+    color: #ccc;
+    margin-top: 10px;
     font-weight: bold;
 }
 
 .box .main-info {
-    font-size: 30px; /* Smaller font size for additional information if needed */
-    color: #06c0f4; /* Lighter color for secondary text */
-    margin-top: 10px; /* Adds space above the info text */
+    font-size: 30px;
+    color: #06c0f4;
+    margin-top: 10px;
     font-weight: bold;
 }
 
 .box:hover p {
-    color: #06c0f4; /* Dark blue color on hover */
+    color: #06c0f4;
 }
 
 .box:hover .main-info {
-    color: #ffffff; /* Dark blue color on hover */
+    color: #ffffff;
 }
 
 @keyframes shine {
@@ -164,4 +226,32 @@ body {
         background-position: -200%;
     }
 }
+ */
 
+ .know-more {
+    display: block; /* Ensures the button takes up the full width */
+    /* margin: 20px; Top margin of 20px, auto left/right margins for centering */
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; 
+    text-decoration: none; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.know-more:hover {
+    background: linear-gradient(45deg, #feb47b, #ff7e5f);
+    color: #333;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.know-more:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.6);
+}
